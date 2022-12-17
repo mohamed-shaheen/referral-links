@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import main_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', main_view, name="main_view"),
+    path('<str:ref_code>/', main_view, name="main_view"),
+    
 ]
